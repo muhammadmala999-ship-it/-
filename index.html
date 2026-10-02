@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>مەرکەز پەخشی خۆشناو</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+
+          
+            <span>
+                مەرکەز پەخشی خۆشناو
+            </span>
+
+        </a>
+
+
+        <nav id="nav">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#products">
+                Products
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#gallery">
+                Gallery
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-right">
+
+            <select id="language">
+
+                <option value="en">
+                    EN
+                </option>
+
+                <option value="ku">
+                    کوردی
+                </option>
+
+                <option value="ar">
+                    العربية
+                </option>
+
+            </select>
+
+
+            <button id="themeBtn"
+                    class="icon-btn">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+
+            <button id="menuBtn"
+                    class="icon-btn menu-btn">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+
+        <span class="hero-tag">
+
+            <i class="fa-solid fa-circle-check"></i>
+
+            Trusted Quality & Professional Service
+
+        </span>
+
+
+        <h1>
+
+            Quality
+            <span>for Every Table.</span>
+
+        </h1>
+
+
+        <p>
+
+            High-quality glassware, mugs and plastic
+            products for customers and businesses.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a href="#products"
+               class="btn btn-primary">
+
+                View Products
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <a href="#contact"
+               class="btn btn-outline">
+
+                Contact Us
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats-section">
+
+    <div class="container stats">
+
+        <div class="stat">
+
+            <strong>
+                100+
+            </strong>
+
+            <span>
+                Products
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                3
+            </strong>
+
+            <span>
+                Categories
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                10+
+            </strong>
+
+            <span>
+                Years Experience
+            </span>
+
+        </div>
+
+
+        <div class="stat">
+
+            <strong>
+                100%
+            </strong>
+
+            <span>
+                Quality Focus
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PRODUCTS ================= -->
+
+<section class="section"
+         id="products">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                OUR PRODUCTS
+            </span>
+
+            <h2>
+                Explore Our Collection
+            </h2>
+
+            <p>
+                Discover our selection of glassware,
+                mugs and plastic products.
+            </p>
+
+        </div>
+
+
+
+        <div class="product-tools">
+
+            <div class="search">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input type="text"
+                       id="search"
+                       placeholder="Search product or code...">
+
+            </div>
+
+
+            <div class="categories">
+
+                <button class="category active"
+                        data-category="all">
+
+                    All
+
+                </button>
+
+
+                <button class="category"
+                        data-category="glass">
+
+                    Glass
+
+                </button>
+
+
+                <button class="category"
+                        data-category="mug">
+
+                    Mug
+
+                </button>
+
+
+                <button class="category"
+                        data-category="plastic">
+
+                    Plastic
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="products"
+             id="productsContainer">
+
+            <!-- Products generated by JavaScript -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="section about"
+         id="about">
+
+    <div class="container about-grid">
+
+
+        <div class="about-image">
+
+         
+
+        </div>
+
+
+        <div class="about-text">
+
+            <span>
+                ABOUT OUR COMPANY
+            </span>
+
+            <h2>
+                Built on Quality,
+                Trust and Experience.
+            </h2>
+
+            <p>
+                Our company specializes in providing
+                high-quality glassware, mugs and plastic
+                products for customers and businesses.
+            </p>
+
+            <p>
+                We focus on quality products, reliable
+                service and long-term relationships with
+                our customers.
+            </p>
+
+
+            <div class="features">
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+
+                    <span>
+                        Quality Products
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+
+                    <span>
+                        Trusted Service
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <span>
+                        Wide Selection
+                    </span>
+
+                </div>
+
+
+                <div class="feature">
+
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <span>
+                        Professional Experience
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="section"
+         id="gallery">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span>
+                GALLERY
+            </span>
+
+            <h2>
+                A Look at Our Work
+            </h2>
+
+            <p>
+                Take a look at our products and company.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+            <div class="gallery-item large">
+
+                <img src="images/gallery1.jpg"
+                     alt="Gallery">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="images/gallery2.jpg"
+                     alt="Gallery">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="images/gallery3.jpg"
+                     alt="Gallery">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="images/gallery4.jpg"
+                     alt="Gallery">
+
+            </div>
+
+
+            <div class="gallery-item">
+
+                <img src="images/gallery5.jpg"
+                     alt="Gallery">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="section contact"
+         id="contact">
+
+    <div class="container contact-grid">
+
+
+        <div class="contact-info">
+
+            <span>
+                GET IN TOUCH
+            </span>
+
+            <h2>
+                Let's Talk About
+                Your Needs.
+            </h2>
+
+            <p>
+                Contact us for more information
+                about our products and services.
+            </p>
+
+
+            <div class="contact-list">
+
+
+                <a href="tel:+9647500000000"
+                   class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Phone
+                        </small>
+
+                        <strong>
+                            +964 750 000 0000
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="https://wa.me/9647500000000"
+                   target="_blank"
+                   class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>
+                            WhatsApp
+                        </small>
+
+                        <strong>
+                            +964 750 000 0000
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="mailto:info@example.com"
+                   class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Email
+                        </small>
+
+                        <strong>
+                            info@example.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <div class="contact-item">
+
+                    <div class="contact-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <small>
+                            Address
+                        </small>
+
+                        <strong>
+                            Erbil, Kurdistan Region, Iraq
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="contact-image">
+
+            <img src="images/contact.jpg"
+                 alt="Our Location">
+
+            <div class="location-card">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>
+                    Visit Us
+                </h3>
+
+                <p>
+                    Erbil, Kurdistan Region, Iraq
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-grid">
+
+
+        <div class="footer-brand">
+
+            <div class="footer-logo">
+
+                <i class="fa-solid fa-wine-glass"></i>
+
+                <span>
+                    Your Company
+                </span>
+
+            </div>
+
+            <p>
+                Quality glassware, mugs and plastic
+                products with professional service.
+            </p>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Quick Links
+            </h4>
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#products">
+                    Products
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#gallery">
+                    Gallery
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div>
+
+            <h4>
+                Follow Us
+            </h4>
+
+            <div class="socials">
+
+                <a href="#">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Your Company.
+        All rights reserved.
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,2659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Company Name | Glassware & Tableware</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Kufi+Arabic:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <style>
+
+        /* =========================================================
+           GENERAL
+        ========================================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --bg: #f7f8fa;
+            --surface: #ffffff;
+            --surface-2: #f0f2f5;
+            --text: #111827;
+            --text-light: #667085;
+            --border: #e5e7eb;
+
+            --primary: #111827;
+            --primary-hover: #273449;
+
+            --accent: #c59d5f;
+            --accent-light: #f3e8d3;
+
+            --shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+
+            --radius: 18px;
+            --max-width: 1250px;
+        }
+
+        body.dark {
+            --bg: #0d1117;
+            --surface: #151b23;
+            --surface-2: #1d2530;
+            --text: #f4f6f8;
+            --text-light: #aab4c0;
+            --border: #29313d;
+
+            --primary: #f4f6f8;
+            --primary-hover: #ffffff;
+
+            --shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        body {
+            font-family: "Inter", "Noto Kufi Arabic", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: 0.3s;
+        }
+
+        body.rtl {
+            direction: rtl;
+            font-family: "Noto Kufi Arabic", "Inter", sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button,
+        input {
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(92%, var(--max-width));
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 55px;
+        }
+
+        .section-title span {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .section-title h2 {
+            font-size: clamp(30px, 4vw, 48px);
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            max-width: 650px;
+            margin: auto;
+            color: var(--text-light);
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(255,255,255,0.88);
+            backdrop-filter: blur(18px);
+
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        body.dark header {
+            background: rgba(13,17,23,0.88);
+            border-color: var(--border);
+        }
+
+        .navbar {
+            height: 78px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 800;
+            font-size: 19px;
+            white-space: nowrap;
+        }
+
+        .logo img {
+            width: 44px;
+            height: 44px;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .logo-placeholder {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            display: grid;
+            place-items: center;
+            background: var(--accent);
+            color: white;
+            font-size: 20px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .icon-btn {
+            width: 42px;
+            height: 42px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 50%;
+            cursor: pointer;
+
+            display: grid;
+            place-items: center;
+
+            transition: 0.25s;
+        }
+
+        .icon-btn:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .language-select {
+            height: 42px;
+            padding: 0 12px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 12px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .menu-btn {
+            display: none;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 78px;
+
+            display: flex;
+            align-items: center;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.72),
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.12)
+                ),
+                url("images/hero.jpg") center/cover no-repeat;
+
+            color: white;
+        }
+
+        body.rtl .hero {
+            background:
+                linear-gradient(
+                    270deg,
+                    rgba(0,0,0,0.72),
+                    rgba(0,0,0,0.35),
+                    rgba(0,0,0,0.12)
+                ),
+                url("images/hero.jpg") center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(42px, 7vw, 78px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            color: #e2bd7b;
+        }
+
+        .hero p {
+            max-width: 620px;
+            color: rgba(255,255,255,0.82);
+            font-size: 17px;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            min-height: 50px;
+            padding: 0 22px;
+
+            border-radius: 12px;
+            border: none;
+
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            font-weight: 700;
+            cursor: pointer;
+
+            transition: 0.25s;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #111827;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.35);
+            color: white;
+            background: rgba(255,255,255,0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-outline:hover {
+            background: rgba(255,255,255,0.16);
+        }
+
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats {
+            margin-top: -55px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .stat {
+            padding: 28px;
+            text-align: center;
+            border-right: 1px solid var(--border);
+        }
+
+        body.rtl .stat {
+            border-right: none;
+            border-left: 1px solid var(--border);
+        }
+
+        .stat:last-child {
+            border: none;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 30px;
+            margin-bottom: 4px;
+        }
+
+        .stat span {
+            color: var(--text-light);
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           PRODUCTS
+        ========================================================= */
+
+        .products-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 35px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            max-width: 430px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+        }
+
+        body.rtl .search-box i {
+            left: auto;
+            right: 16px;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 50px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            border-radius: 13px;
+            outline: none;
+            padding: 0 45px;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+        }
+
+        .category-buttons {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            height: 44px;
+            padding: 0 16px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-light);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.25s;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: var(--text);
+            color: var(--bg);
+            border-color: var(--text);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: var(--shadow);
+        }
+
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            background: var(--surface-2);
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-category {
+            display: inline-block;
+            color: var(--accent);
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .product-code {
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about {
+            background: var(--surface);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 25px;
+        }
+
+        .about-badge {
+            position: absolute;
+            bottom: 25px;
+            right: -25px;
+
+            padding: 22px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: var(--shadow);
+        }
+
+        body.rtl .about-badge {
+            right: auto;
+            left: -25px;
+        }
+
+        .about-badge strong {
+            font-size: 28px;
+            display: block;
+        }
+
+        .about-badge span {
+            color: var(--text-light);
+            font-size: 12px;
+        }
+
+        .about-content .eyebrow {
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .about-content h2 {
+            font-size: clamp(32px, 4vw, 52px);
+            line-height: 1.15;
+            margin: 15px 0 22px;
+        }
+
+        .about-content p {
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        .features {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .feature-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: var(--accent-light);
+            color: #8a682f;
+
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        body.dark .feature-icon {
+            background: rgba(197,157,95,0.15);
+            color: #e0b66e;
+        }
+
+        .feature span {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           GALLERY
+        ========================================================= */
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr 1fr;
+            grid-auto-rows: 250px;
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 18px;
+            cursor: pointer;
+        }
+
+        .gallery-item:first-child {
+            grid-row: span 2;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.07);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                transparent,
+                rgba(0,0,0,0.65)
+            );
+
+            opacity: 0;
+            transition: 0.3s;
+
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            color: white;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact {
+            background: var(--surface);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-content h2 {
+            font-size: clamp(32px, 4vw, 50px);
+            line-height: 1.15;
+            margin-bottom: 20px;
+        }
+
+        .contact-content > p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .contact-items {
+            display: grid;
+            gap: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 18px;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .contact-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 13px;
+            background: var(--accent-light);
+            color: #8a682f;
+            display: grid;
+            place-items: center;
+            flex-shrink: 0;
+        }
+
+        body.dark .contact-icon {
+            background: rgba(197,157,95,0.15);
+            color: #e0b66e;
+        }
+
+        .contact-item small {
+            display: block;
+            color: var(--text-light);
+            margin-bottom: 3px;
+        }
+
+        .contact-item strong {
+            font-size: 14px;
+        }
+
+        .contact-map {
+            min-height: 450px;
+            border-radius: 25px;
+            overflow: hidden;
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.25),
+                    rgba(0,0,0,0.25)
+                ),
+                url("images/contact.jpg") center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .map-card {
+            background: rgba(255,255,255,0.95);
+            color: #111827;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            max-width: 300px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-card i {
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        .map-card h3 {
+            margin-bottom: 5px;
+        }
+
+        .map-card p {
+            color: #667085;
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            background: #0b0f14;
+            color: white;
+            padding: 60px 0 25px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .footer-description {
+            color: #98a2b3;
+            max-width: 400px;
+            font-size: 14px;
+        }
+
+        footer h4 {
+            margin-bottom: 17px;
+        }
+
+        .footer-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-links a {
+            color: #98a2b3;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .social {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid #29313d;
+            display: grid;
+            place-items: center;
+            transition: 0.25s;
+        }
+
+        .social:hover {
+            border-color: #c59d5f;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            padding-top: 25px;
+            border-top: 1px solid #29313d;
+            color: #667085;
+            font-size: 12px;
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           IMAGE MODAL
+        ========================================================= */
+
+        .image-modal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            padding: 30px;
+        }
+
+        .image-modal.active {
+            display: flex;
+        }
+
+        .image-modal img {
+            max-width: 95%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        .modal-close {
+            position: fixed;
+            top: 25px;
+            right: 30px;
+
+            width: 45px;
+            height: 45px;
+
+            border: none;
+            border-radius: 50%;
+
+            background: white;
+            color: #111827;
+
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            nav {
+                position: fixed;
+                top: 78px;
+                left: 0;
+                width: 100%;
+
+                background: var(--surface);
+                border-bottom: 1px solid var(--border);
+
+                padding: 20px;
+
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            body.rtl nav {
+                align-items: flex-end;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .menu-btn {
+                display: grid;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat:nth-child(2) {
+                border-right: none;
+            }
+
+            .stat:nth-child(3) {
+                border-top: 1px solid var(--border);
+            }
+
+            .stat:nth-child(4) {
+                border-top: 1px solid var(--border);
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-badge {
+                right: 20px;
+            }
+
+            body.rtl .about-badge {
+                right: auto;
+                left: 20px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero p {
+                font-size: 15px;
+            }
+
+            .stats {
+                margin-top: -30px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-toolbar {
+                align-items: stretch;
+            }
+
+            .search-box {
+                max-width: none;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+                grid-auto-rows: 180px;
+            }
+
+            .gallery-item:first-child {
+                grid-row: span 2;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .nav-actions {
+                gap: 5px;
+            }
+
+            .language-select {
+                width: 55px;
+                padding: 0 5px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     HEADER
+============================================================= -->
+
+<header>
+
+    <div class="container navbar">
+
+        <!-- EDIT HERE: Company name -->
+        <a href="#home" class="logo">
+
+            <!-- Put your real logo in images/logo.png -->
+            <img src="images/logo.png"
+                 alt="Company Logo"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+            <span class="logo-placeholder" style="display:none;">
+                <i class="fa-solid fa-wine-glass"></i>
+            </span>
+
+            <span id="companyNameHeader">
+                Your Company
+            </span>
+
+        </a>
+
+
+        <nav id="navigation">
+
+            <a href="#home" data-i18n="navHome">Home</a>
+
+            <a href="#products" data-i18n="navProducts">
+                Products
+            </a>
+
+            <a href="#about" data-i18n="navAbout">
+                About Us
+            </a>
+
+            <a href="#gallery" data-i18n="navGallery">
+                Gallery
+            </a>
+
+            <a href="#contact" data-i18n="navContact">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <select id="languageSelect" class="language-select">
+                <option value="en">EN</option>
+                <option value="ku">کوردی</option>
+                <option value="ar">العربية</option>
+            </select>
+
+            <button class="icon-btn"
+                    id="themeButton"
+                    aria-label="Change theme">
+                <i class="fa-solid fa-moon"></i>
+            </button>
+
+            <button class="icon-btn menu-btn"
+                    id="menuButton"
+                    aria-label="Menu">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =============================================================
+     HOME
+============================================================= -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="hero-label">
+                <i class="fa-solid fa-circle-check"></i>
+                <span data-i18n="heroLabel">
+                    Trusted Quality & Professional Service
+                </span>
+            </div>
+
+
+            <h1>
+                <span data-i18n="heroTitle1">
+                    Quality
+                </span>
+                <br>
+                <span data-i18n="heroTitle2">
+                    for Every Table.
+                </span>
+            </h1>
+
+
+            <p data-i18n="heroDescription">
+                We provide a wide range of high-quality glassware,
+                mugs and plastic products for businesses and customers.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#products"
+                   class="btn btn-primary">
+
+                    <span data-i18n="viewProducts">
+                        View Products
+                    </span>
+
+                    <i class="fa-solid fa-arrow-down"></i>
+
+                </a>
+
+
+                <a href="#contact"
+                   class="btn btn-outline">
+
+                    <span data-i18n="contactUs">
+                        Contact Us
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     STATS
+============================================================= -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <strong>100+</strong>
+                <span data-i18n="statProducts">
+                    Products
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>3</strong>
+                <span data-i18n="statCategories">
+                    Categories
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>10+</strong>
+                <span data-i18n="statYears">
+                    Years Experience
+                </span>
+            </div>
+
+            <div class="stat">
+                <strong>100%</strong>
+                <span data-i18n="statQuality">
+                    Quality Focus
+                </span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     PRODUCTS
+============================================================= -->
+
+<section class="section" id="products">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span data-i18n="productsEyebrow">
+                Our Products
+            </span>
+
+            <h2 data-i18n="productsTitle">
+                Explore Our Collection
+            </h2>
+
+            <p data-i18n="productsDescription">
+                Discover our selection of glassware, mugs and plastic
+                products.
+            </p>
+
+        </div>
+
+
+        <div class="products-toolbar">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="productSearch"
+                    placeholder="Search products..."
+                    data-placeholder="searchPlaceholder">
+
+            </div>
+
+
+            <div class="category-buttons">
+
+                <button class="category-btn active"
+                        data-category="all"
+                        data-i18n="all">
+                    All
+                </button>
+
+                <button class="category-btn"
+                        data-category="glass"
+                        data-i18n="glass">
+                    Glass
+                </button>
+
+                <button class="category-btn"
+                        data-category="mug"
+                        data-i18n="mug">
+                    Mug
+                </button>
+
+                <button class="category-btn"
+                        data-category="plastic"
+                        data-i18n="plastic">
+                    Plastic
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="products-grid" id="productsGrid"></div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     ABOUT
+============================================================= -->
+
+<section class="section about" id="about">
+
+    <div class="container">
+
+        <div class="about-grid">
+
+            <div class="about-image">
+
+                <!-- EDIT HERE: Replace about.jpg -->
+                <img src="images/about.jpg"
+                     alt="Our Company">
+
+                <div class="about-badge">
+
+                    <strong>10+</strong>
+
+                    <span data-i18n="yearsExperience">
+                        Years of Experience
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <span class="eyebrow"
+                      data-i18n="aboutEyebrow">
+                    About Our Company
+                </span>
+
+                <h2 data-i18n="aboutTitle">
+                    Built on Quality, Trust and Experience.
+                </h2>
+
+                <p data-i18n="aboutText1">
+                    Our company specializes in providing glassware,
+                    mugs and plastic products for customers and
+                    businesses.
+                </p>
+
+                <p data-i18n="aboutText2">
+                    We focus on quality products, reliable service
+                    and building long-term relationships with our
+                    customers.
+                </p>
+
+
+                <div class="features">
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+
+                        <span data-i18n="featureQuality">
+                            Quality Products
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+
+                        <span data-i18n="featureTrust">
+                            Trusted Service
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-truck"></i>
+                        </div>
+
+                        <span data-i18n="featureVariety">
+                            Wide Selection
+                        </span>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <span data-i18n="featureExperience">
+                            Professional Experience
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     GALLERY
+============================================================= -->
+
+<section class="section" id="gallery">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span data-i18n="galleryEyebrow">
+                Gallery
+            </span>
+
+            <h2 data-i18n="galleryTitle">
+                A Look at Our Work
+            </h2>
+
+            <p data-i18n="galleryDescription">
+                Take a look at our products and company.
+            </p>
+
+        </div>
+
+
+        <div class="gallery-grid">
+
+            <!-- EDIT HERE: Replace gallery images -->
+
+            <div class="gallery-item">
+                
+                     alt="Gallery Image">
+                <div class="gallery-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                
+                     alt="Gallery Image">
+                <div class="gallery-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+               
+                     alt="Gallery Image">
+                <div class="gallery-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+                <img src="images/gallery4.jpg"
+                     alt="Gallery Image">
+                <div class="gallery-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+
+
+            <div class="gallery-item">
+               
+                     alt="Gallery Image">
+                <div class="gallery-overlay">
+                    <i class="fa-solid fa-expand"></i>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     CONTACT
+============================================================= -->
+
+<section class="section contact" id="contact">
+
+    <div class="container">
+
+        <div class="contact-grid">
+
+            <div class="contact-content">
+
+                <span class="eyebrow"
+                      data-i18n="contactEyebrow">
+                    Get In Touch
+                </span>
+
+                <h2 data-i18n="contactTitle">
+                    Let's Talk About Your Needs.
+                </h2>
+
+                <p data-i18n="contactDescription">
+                    Contact us for more information about our products
+                    and business.
+                </p>
+
+
+                <div class="contact-items">
+
+                    <!-- EDIT HERE: Phone -->
+
+                    <a class="contact-item"
+                       href="tel:+9647504453627">
+
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <small data-i18n="phone">
+                                Phone
+                            </small>
+
+                            <strong>
+                                +964 750 445 3627
+                            </strong>
+                        </div>
+
+                    </a>
+
+
+                    <!-- EDIT HERE: WhatsApp -->
+
+                    <a class="contact-item"
+                       href="https://wa.me/964754453627"
+                       target="_blank">
+
+                        <div class="contact-icon">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </div>
+
+                        <div>
+                            <small>
+                                WhatsApp
+                            </small>
+
+                            <strong>
+                                +964 750 445 3627
+                            </strong>
+                        </div>
+
+                    </a>
+
+
+                
+
+
+                    <!-- EDIT HERE: Address -->
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <small data-i18n="address">
+                                Address
+                            </small>
+
+                            <strong>
+                                Erbil, Kurdistan Region, Iraq
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="contact-map">
+
+                <div class="map-card">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <h3 data-i18n="visitUs">
+                        Visit Us
+                    </h3>
+
+                    <p data-i18n="visitText">
+                        We are located in Erbil, Kurdistan Region, Iraq.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     FOOTER
+============================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <div class="footer-logo">
+                    <i class="fa-solid fa-wine-glass"></i>
+                    <span id="footerCompanyName">
+                        Your Company
+                    </span>
+                </div>
+
+                <p class="footer-description"
+                   data-i18n="footerDescription">
+                    Quality glassware, mugs and plastic products
+                    with professional service.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h4 data-i18n="quickLinks">
+                    Quick Links
+                </h4>
+
+                <div class="footer-links">
+
+                    <a href="#home"
+                       data-i18n="navHome">
+                        Home
+                    </a>
+
+                    <a href="#products"
+                       data-i18n="navProducts">
+                        Products
+                    </a>
+
+                    <a href="#about"
+                       data-i18n="navAbout">
+                        About Us
+                    </a>
+
+                    <a href="#gallery"
+                       data-i18n="navGallery">
+                        Gallery
+                    </a>
+
+                    <a href="#contact"
+                       data-i18n="navContact">
+                        Contact
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div>
+
+                <h4 data-i18n="followUs">
+                    Follow Us
+                </h4>
+
+                <div class="socials">
+
+                    <!-- EDIT HERE: Social links -->
+
+                    <a href="#"
+                       class="social">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#"
+                       class="social">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#"
+                       class="social">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © <span id="currentYear"></span>
+            <span id="footerCopyrightName">
+                Your Company
+            </span>.
+
+            <span data-i18n="allRights">
+                All rights reserved.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =============================================================
+     IMAGE MODAL
+============================================================= -->
+
+<div class="image-modal" id="imageModal">
+
+    <button class="modal-close" id="modalClose">
+        <i class="fa-solid fa-xmark"></i>
+    </button>
+
+    <img id="modalImage"
+         src=""
+         alt="Full Image">
+
+</div>
+
+
+
+<script>
+
+
+/* ===============================================================
+   EDIT YOUR COMPANY INFORMATION HERE
+================================================================ */
+
+const company = {
+
+    name: "Your Company",
+
+    phone: "+964 750 000 0000",
+
+    whatsapp: "9647500000000",
+
+    email: "info@example.com",
+
+    address: "Erbil, Kurdistan Region, Iraq"
+
+};
+
+
+
+/* ===============================================================
+   EDIT YOUR PRODUCTS HERE
+
+   To add another product:
+   Copy one object and change the information.
+
+================================================================ */
+
+const products = [
+
+    {
+        name: {
+            en: "Classic Glass",
+            ku: "پیاڵەی کلاسیک",
+            ar: "كأس كلاسيكي"
+        },
+
+        code: "GL-001",
+
+        category: "glass",
+
+        image: "images/product1.jpg",
+
+        description: {
+            en: "Elegant glass suitable for everyday use.",
+            ku: "پیاڵەیەکی جوان و گونجاو بۆ بەکارهێنانی ڕۆژانە.",
+            ar: "كأس أنيق مناسب للاستخدام اليومي."
+        }
+    },
+
+
+    {
+        name: {
+            en: "Premium Glass",
+            ku: "پیاڵەی پرێمیۆم",
+            ar: "كأس فاخر"
+        },
+
+        code: "GL-002",
+
+        category: "glass",
+
+        image: "images/product2.jpg",
+
+        description: {
+            en: "Premium glass with a clean modern design.",
+            ku: "پیاڵەیەکی پرێمیۆم بە دیزاینی مۆدێرن.",
+            ar: "كأس فاخر بتصميم عصري."
+        }
+    },
+
+
+    {
+        name: {
+            en: "Coffee Mug",
+            ku: "کوپ",
+            ar: "كوب قهوة"
+        },
+
+        code: "MG-001",
+
+        category: "mug",
+
+        image: "images/product3.jpg",
+
+        description: {
+            en: "Modern mug for coffee and hot drinks.",
+            ku: "کوپێکی مۆدێرن بۆ قاوە و خواردنەوە گەرمەکان.",
+            ar: "كوب عصري للقهوة والمشروبات الساخنة."
+        }
+    },
+
+
+    {
+        name: {
+            en: "Plastic Cup",
+            ku: "پیاڵەی پلاستیک",
+            ar: "كوب بلاستيك"
+        },
+
+        code: "PL-001",
+
+        category: "plastic",
+
+        image: "images/product4.jpg",
+
+        description: {
+            en: "Practical plastic cup for everyday use.",
+            ku: "پیاڵەی پلاستیکی گونجاو بۆ بەکارهێنانی ڕۆژانە.",
+            ar: "كوب بلاستيكي عملي للاستخدام اليومي."
+        }
+    }
+
+];
+
+
+
+/* ===============================================================
+   TRANSLATIONS
+================================================================ */
+
+const translations = {
+
+    en: {
+
+        navHome: "Home",
+        navProducts: "Products",
+        navAbout: "About Us",
+        navGallery: "Gallery",
+        navContact: "Contact",
+
+        heroLabel: "Trusted Quality & Professional Service",
+
+        heroTitle1: "Quality",
+        heroTitle2: "for Every Table.",
+
+        heroDescription:
+            "We provide a wide range of high-quality glassware, mugs and plastic products for businesses and customers.",
+
+        viewProducts: "View Products",
+        contactUs: "Contact Us",
+
+        statProducts: "Products",
+        statCategories: "Categories",
+        statYears: "Years Experience",
+        statQuality: "Quality Focus",
+
+        productsEyebrow: "Our Products",
+        productsTitle: "Explore Our Collection",
+
+        productsDescription:
+            "Discover our selection of glassware, mugs and plastic products.",
+
+        searchPlaceholder: "Search products...",
+
+        all: "All",
+        glass: "Glass",
+        mug: "Mug",
+        plastic: "Plastic",
+
+        aboutEyebrow: "About Our Company",
+        aboutTitle: "Built on Quality, Trust and Experience.",
+
+        aboutText1:
+            "Our company specializes in providing glassware, mugs and plastic products for customers and businesses.",
+
+        aboutText2:
+            "We focus on quality products, reliable service and building long-term relationships with our customers.",
+
+        yearsExperience: "Years of Experience",
+
+        featureQuality: "Quality Products",
+        featureTrust: "Trusted Service",
+        featureVariety: "Wide Selection",
+        featureExperience: "Professional Experience",
+
+        galleryEyebrow: "Gallery",
+        galleryTitle: "A Look at Our Work",
+
+        galleryDescription:
+            "Take a look at our products and company.",
+
+        contactEyebrow: "Get In Touch",
+        contactTitle: "Let's Talk About Your Needs.",
+
+        contactDescription:
+            "Contact us for more information about our products and business.",
+
+        phone: "Phone",
+        address: "Address",
+
+        visitUs: "Visit Us",
+
+        visitText:
+            "We are located in Erbil, Kurdistan Region, Iraq.",
+
+        quickLinks: "Quick Links",
+        followUs: "Follow Us",
+
+        footerDescription:
+            "Quality glassware, mugs and plastic products with professional service.",
+
+        allRights: "All rights reserved."
+
+    },
+
+
+    ku: {
+
+        navHome: "سەرەکی",
+        navProducts: "بەرهەمەکان",
+        navAbout: "دەربارەی ئێمە",
+        navGallery: "گەلەری",
+        navContact: "پەیوەندی",
+
+        heroLabel: "کوالێتیی متمانەپێکراو و خزمەتگوزاریی پیشەیی",
+
+        heroTitle1: "کوالێتی",
+        heroTitle2: "بۆ هەموو مێزێک.",
+
+        heroDescription:
+            "ئێمە جۆرەها پیاڵەی شووشەیی، کوپ و بەرهەمی پلاستیکی بە کوالێتیی بەرز پێشکەش دەکەین.",
+
+        viewProducts: "بینینی بەرهەمەکان",
+        contactUs: "پەیوەندیمان پێوە بکە",
+
+        statProducts: "بەرهەم",
+        statCategories: "بەش",
+        statYears: "ساڵ ئەزموون",
+        statQuality: "گرنگیدان بە کوالێتی",
+
+        productsEyebrow: "بەرهەمەکانمان",
+        productsTitle: "کۆمەڵە بەرهەمەکانمان ببینە",
+
+        productsDescription:
+            "کۆمەڵێک لە پیاڵەی شووشەیی، کوپ و بەرهەمی پلاستیکی ببینە.",
+
+        searchPlaceholder: "گەڕان بۆ بەرهەم...",
+
+        all: "هەموو",
+        glass: "شووشە",
+        mug: "کوپ",
+        plastic: "پلاستیک",
+
+        aboutEyebrow: "دەربارەی کۆمپانیاکەمان",
+        aboutTitle: "لەسەر کوالێتی، متمانە و ئەزموون دامەزراوین.",
+
+        aboutText1:
+            "کۆمپانیاکەمان تایبەتە بە پێشکەشکردنی پیاڵەی شووشەیی، کوپ و بەرهەمی پلاستیکی بۆ کڕیار و کاروبارەکان.",
+
+        aboutText2:
+            "گرنگی بە کوالێتیی بەرهەم، خزمەتگوزاریی متمانەپێکراو و دروستکردنی پەیوەندیی درێژخایەن لەگەڵ کڕیارەکانمان دەدەین.",
+
+        yearsExperience: "ساڵی ئەزموون",
+
+        featureQuality: "بەرهەمی کوالێتی",
+        featureTrust: "خزمەتگوزاریی متمانەپێکراو",
+        featureVariety: "جۆری زۆری بەرهەم",
+        featureExperience: "ئەزموونی پیشەیی",
+
+        galleryEyebrow: "گەلەری",
+        galleryTitle: "سەیرێک لە کارەکانمان",
+
+        galleryDescription:
+            "سەیری بەرهەمەکان و کۆمپانیاکەمان بکە.",
+
+        contactEyebrow: "پەیوەندیمان پێوە بکە",
+        contactTitle: "با دەربارەی پێویستییەکانت گفتوگۆ بکەین.",
+
+        contactDescription:
+            "بۆ زانیاریی زیاتر دەربارەی بەرهەم و کاروبارەکەمان پەیوەندیمان پێوە بکە.",
+
+        phone: "تەلەفۆن",
+        address: "ناونیشان",
+
+        visitUs: "سەردانمان بکە",
+
+        visitText:
+            "لە هەولێر، هەرێمی کوردستان، عێراقین.",
+
+        quickLinks: "بەستەرە خێراکان",
+        followUs: "شوێنمان بکە",
+
+        footerDescription:
+            "بەرهەمی کوالێتیی شووشە، کوپ و پلاستیک بە خزمەتگوزاریی پیشەیی.",
+
+        allRights: "هەموو مافەکان پارێزراون."
+
+    },
+
+
+    ar: {
+
+        navHome: "الرئيسية",
+        navProducts: "المنتجات",
+        navAbout: "من نحن",
+        navGallery: "المعرض",
+        navContact: "اتصل بنا",
+
+        heroLabel: "جودة موثوقة وخدمة احترافية",
+
+        heroTitle1: "جودة",
+        heroTitle2: "لكل مائدة.",
+
+        heroDescription:
+            "نوفر مجموعة واسعة من الأكواب الزجاجية والأكواب ومنتجات البلاستيك عالية الجودة للأعمال والعملاء.",
+
+        viewProducts: "عرض المنتجات",
+        contactUs: "اتصل بنا",
+
+        statProducts: "منتج",
+        statCategories: "فئات",
+        statYears: "سنوات خبرة",
+        statQuality: "تركيز على الجودة",
+
+        productsEyebrow: "منتجاتنا",
+        productsTitle: "اكتشف مجموعتنا",
+
+        productsDescription:
+            "اكتشف مجموعتنا من الأواني الزجاجية والأكواب ومنتجات البلاستيك.",
+
+        searchPlaceholder: "ابحث عن منتج...",
+
+        all: "الكل",
+        glass: "زجاج",
+        mug: "أكواب",
+        plastic: "بلاستيك",
+
+        aboutEyebrow: "عن شركتنا",
+        aboutTitle: "نبني عملنا على الجودة والثقة والخبرة.",
+
+        aboutText1:
+            "تتخصص شركتنا في توفير الأواني الزجاجية والأكواب ومنتجات البلاستيك للعملاء والشركات.",
+
+        aboutText2:
+            "نركز على جودة المنتجات والخدمة الموثوقة وبناء علاقات طويلة الأمد مع عملائنا.",
+
+        yearsExperience: "سنوات من الخبرة",
+
+        featureQuality: "منتجات عالية الجودة",
+        featureTrust: "خدمة موثوقة",
+        featureVariety: "تشكيلة واسعة",
+        featureExperience: "خبرة احترافية",
+
+        galleryEyebrow: "المعرض",
+        galleryTitle: "نظرة على أعمالنا",
+
+        galleryDescription:
+            "شاهد منتجاتنا وشركتنا.",
+
+        contactEyebrow: "تواصل معنا",
+        contactTitle: "دعنا نتحدث عن احتياجاتك.",
+
+        contactDescription:
+            "تواصل معنا للحصول على المزيد من المعلومات حول منتجاتنا وأعمالنا.",
+
+        phone: "الهاتف",
+        address: "العنوان",
+
+        visitUs: "قم بزيارتنا",
+
+        visitText:
+            "نحن موجودون في أربيل، إقليم كردستان، العراق.",
+
+        quickLinks: "روابط سريعة",
+        followUs: "تابعنا",
+
+        footerDescription:
+            "أواني زجاجية وأكواب ومنتجات بلاستيكية عالية الجودة مع خدمة احترافية.",
+
+        allRights: "جميع الحقوق محفوظة."
+
+    }
+
+};
+
+
+
+/* ===============================================================
+   VARIABLES
+================================================================ */
+
+let currentLanguage = "en";
+let currentCategory = "all";
+
+const productsGrid =
+    document.getElementById("productsGrid");
+
+const searchInput =
+    document.getElementById("productSearch");
+
+const languageSelect =
+    document.getElementById("languageSelect");
+
+
+
+/* ===============================================================
+   COMPANY NAME
+================================================================ */
+
+document.getElementById("companyNameHeader").textContent =
+    company.name;
+
+document.getElementById("footerCompanyName").textContent =
+    company.name;
+
+document.getElementById("footerCopyrightName").textContent =
+    company.name;
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+
+
+/* ===============================================================
+   RENDER PRODUCTS
+================================================================ */
+
+function renderProducts() {
+
+    const searchTerm =
+        searchInput.value.toLowerCase().trim();
+
+
+    const filteredProducts =
+        products.filter(product => {
+
+            const matchesCategory =
+                currentCategory === "all" ||
+                product.category === currentCategory;
+
+
+            const productName =
+                product.name[currentLanguage].toLowerCase();
+
+
+            const matchesSearch =
+                productName.includes(searchTerm) ||
+                product.code.toLowerCase().includes(searchTerm);
+
+
+            return matchesCategory && matchesSearch;
+
+        });
+
+
+    productsGrid.innerHTML = "";
+
+
+    if (filteredProducts.length === 0) {
+
+        productsGrid.innerHTML = `
+            <div style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:60px;
+                color:var(--text-light);
+            ">
+                <i class="fa-solid fa-box-open"
+                   style="font-size:40px;margin-bottom:15px;">
+                </i>
+
+                <p>
+                    ${
+                        currentLanguage === "ku"
+                            ? "هیچ بەرهەمێک نەدۆزرایەوە."
+                            : currentLanguage === "ar"
+                                ? "لم يتم العثور على منتجات."
+                                : "No products found."
+                    }
+                </p>
+            </div>
+        `;
+
+        return;
+    }
+
+
+    filteredProducts.forEach(product => {
+
+        const categoryName =
+            translations[currentLanguage][product.category];
+
+
+        const card = document.createElement("div");
+
+        card.className = "product-card";
+
+
+        card.innerHTML = `
+
+            <div class="product-image">
+
+                <img
+                    src="${product.image}"
+                    alt="${product.name[currentLanguage]}"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="product-info">
+
+                <span class="product-category">
+                    ${categoryName}
+                </span>
+
+                <h3>
+                    ${product.name[currentLanguage]}
+                </h3>
+
+                <span class="product-code">
+                    ${product.code}
+                </span>
+
+            </div>
+
+        `;
+
+
+        productsGrid.appendChild(card);
+
+    });
+
+}
+
+
+
+/* ===============================================================
+   SEARCH
+================================================================ */
+
+searchInput.addEventListener("input", renderProducts);
+
+
+
+/* ===============================================================
+   CATEGORY BUTTONS
+================================================================ */
+
+document.querySelectorAll(".category-btn")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(".category-btn")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            button.classList.add("active");
+
+            currentCategory =
+                button.dataset.category;
+
+            renderProducts();
+
+        });
+
+    });
+
+
+
+/* ===============================================================
+   LANGUAGE
+================================================================ */
+
+function changeLanguage(language) {
+
+    currentLanguage = language;
+
+
+    const dictionary =
+        translations[language];
+
+
+    document
+        .querySelectorAll("[data-i18n]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.i18n;
+
+
+            if (dictionary[key]) {
+                element.textContent =
+                    dictionary[key];
+            }
+
+        });
+
+
+    document
+        .querySelectorAll("[data-placeholder]")
+        .forEach(element => {
+
+            const key =
+                element.dataset.placeholder;
+
+
+            if (dictionary[key]) {
+
+                element.placeholder =
+                    dictionary[key];
+
+            }
+
+        });
+
+
+    if (language === "ar") {
+
+        document.body.classList.add("rtl");
+
+        document.documentElement.dir = "rtl";
+
+    }
+
+    else if (language === "ku") {
+
+        document.body.classList.add("rtl");
+
+        document.documentElement.dir = "rtl";
+
+    }
+
+    else {
+
+        document.body.classList.remove("rtl");
+
+        document.documentElement.dir = "ltr";
+
+    }
+
+
+    renderProducts();
+
+}
+
+
+
+languageSelect.addEventListener(
+    "change",
+    event => {
+
+        changeLanguage(event.target.value);
+
+    }
+);
+
+
+
+/* ===============================================================
+   DARK / LIGHT MODE
+================================================================ */
+
+const themeButton =
+    document.getElementById("themeButton");
+
+
+themeButton.addEventListener("click", () => {
+
+    document.body.classList.toggle("dark");
+
+
+    const icon =
+        themeButton.querySelector("i");
+
+
+    if (document.body.classList.contains("dark")) {
+
+        icon.className =
+            "fa-solid fa-sun";
+
+        localStorage.setItem(
+            "theme",
+            "dark"
+        );
+
+    }
+
+    else {
+
+        icon.className =
+            "fa-solid fa-moon";
+
+        localStorage.setItem(
+            "theme",
+            "light"
+        );
+
+    }
+
+});
+
+
+
+/* ===============================================================
+   LOAD SAVED THEME
+================================================================ */
+
+if (
+    localStorage.getItem("theme") === "dark"
+) {
+
+    document.body.classList.add("dark");
+
+    themeButton
+        .querySelector("i")
+        .className =
+        "fa-solid fa-sun";
+
+}
+
+
+
+/* ===============================================================
+   MOBILE MENU
+================================================================ */
+
+const menuButton =
+    document.getElementById("menuButton");
+
+const navigation =
+    document.getElementById("navigation");
+
+
+menuButton.addEventListener("click", () => {
+
+    navigation.classList.toggle("active");
+
+
+    const icon =
+        menuButton.querySelector("i");
+
+
+    if (navigation.classList.contains("active")) {
+
+        icon.className =
+            "fa-solid fa-xmark";
+
+    }
+
+    else {
+
+        icon.className =
+            "fa-solid fa-bars";
+
+    }
+
+});
+
+
+/* Close mobile menu after clicking a link */
+
+document
+    .querySelectorAll("nav a")
+    .forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            navigation.classList.remove("active");
+
+            menuButton
+                .querySelector("i")
+                .className =
+                "fa-solid fa-bars";
+
+        });
+
+    });
+
+
+
+/* ===============================================================
+   GALLERY IMAGE MODAL
+================================================================ */
+
+const imageModal =
+    document.getElementById("imageModal");
+
+const modalImage =
+    document.getElementById("modalImage");
+
+const modalClose =
+    document.getElementById("modalClose");
+
+
+document
+    .querySelectorAll(".gallery-item img")
+    .forEach(image => {
+
+        image.addEventListener("click", () => {
+
+            modalImage.src =
+                image.src;
+
+            imageModal.classList.add("active");
+
+        });
+
+    });
+
+
+modalClose.addEventListener(
+    "click",
+    () => {
+
+        imageModal.classList.remove("active");
+
+    }
+);
+
+
+imageModal.addEventListener(
+    "click",
+    event => {
+
+        if (event.target === imageModal) {
+
+            imageModal.classList.remove("active");
+
+        }
+
+    }
+);
+
+
+
+/* ===============================================================
+   INITIALIZE
+================================================================ */
+
+renderProducts();
+
+changeLanguage("en");
+
+</script>
+
+</body>
+</html>
